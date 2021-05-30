@@ -12,6 +12,5 @@ public class OnLeave implements Listener {
     public void onLeave(PlayerQuitEvent event) {
         Player player = event.getPlayer();
         event.setQuitMessage(ChatColor.RED + player.getDisplayName() + ChatColor.AQUA + " just left the server </3");
-        event.getPlayer().sendMessage("Test Commit");
     }
 }
