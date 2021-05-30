@@ -1,4 +1,4 @@
-# Spigot Plugin
+# Sxift Spigot Plugin
 This is my first Spigot Plugin, and my first project in Java.
 I made this just to play around with the Spigot API, and test out my Java skills.
 If you have any suggestions, make sure to make a Pull Request, and if you manage to find any issues,
