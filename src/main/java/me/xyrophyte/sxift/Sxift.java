@@ -1,6 +1,8 @@
 package me.xyrophyte.sxift;
 
-import events.*;
+import me.xyrophyte.sxift.commands.God;
+import me.xyrophyte.sxift.commands.Ping;
+import me.xyrophyte.sxift.events.*;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -21,6 +23,12 @@ public final class Sxift extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new OnLeave(), this);
         getServer().getPluginManager().registerEvents(new OnLeaveBed(), this);
         getServer().getPluginManager().registerEvents(new OnShear(), this);
+
+        // Registering commands
+        getCommand("god").setExecutor(new God());
+        getCommand("ping").setExecutor(new Ping());
+
+        getLogger().info("Plugin started.");
     }
 
     @Override

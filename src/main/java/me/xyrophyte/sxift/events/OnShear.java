@@ -1,4 +1,4 @@
-package events;
+package me.xyrophyte.sxift.events;
 
 import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;

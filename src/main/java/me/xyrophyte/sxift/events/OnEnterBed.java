@@ -1,4 +1,4 @@
-package events;
+package me.xyrophyte.sxift.events;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
