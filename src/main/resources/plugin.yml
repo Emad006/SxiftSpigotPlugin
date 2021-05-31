@@ -3,3 +3,10 @@ version: ${project.version}
 main: me.xyrophyte.sxift.Sxift
 authors: [ XyroPhyte ]
 description: Minecraft Spigot Plugin
+
+commands:
+  suicide:
+    description: Commit suicide.
+    aliases:
+      - kill
+      - die
