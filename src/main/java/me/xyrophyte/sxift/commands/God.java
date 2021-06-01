@@ -1,5 +1,6 @@
 package me.xyrophyte.sxift.commands;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -13,7 +14,7 @@ public class God implements CommandExecutor {
             ((Player) sender).setInvulnerable(true);
             sender.sendMessage("Entered God Mode.");
         } else {
-            System.out.println(ChatColor.DARK_RED + " Failed to run command. " + ChatColor.YELLOW + "Reason: " + ChatColor.RED + "Not a Player.");
+            Bukkit.getLogger().warning(ChatColor.DARK_RED + " Failed to run command. " + ChatColor.YELLOW + "Reason: " + ChatColor.RED + "Not a Player.");
         }
         return false;
     }
