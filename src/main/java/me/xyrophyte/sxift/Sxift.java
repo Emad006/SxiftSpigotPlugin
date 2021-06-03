@@ -25,7 +25,7 @@ public final class Sxift extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new OnShear(), this);
 
         // Registering commands
-        getCommand("god").setExecutor(new God());
+        getCommand("god").setExecutor(new God(this));
         getCommand("ping").setExecutor(new Ping());
 
         getLogger().info("Plugin started.");
