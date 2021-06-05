@@ -7,18 +7,18 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class God implements CommandExecutor {
+public class Suicide implements CommandExecutor {
 
     private final Sxift instance;
-    public God(Sxift instance) {
+    public Suicide(Sxift instance) {
         this.instance = instance;
     }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (sender instanceof Player) {
-            ((Player) sender).setInvulnerable(true);
-            sender.sendMessage("Entered God Mode.");
+        if(sender instanceof Player) {
+            ((Player) sender).setHealth(0);
+            sender.sendMessage(ChatColor.RED + ((Player) sender).getDisplayName() + ChatColor.BLUE + " gave up on life.");
         } else {
             instance.getLogger().warning(ChatColor.DARK_RED + " Failed to run command. REASON: Not a PLAYER.");
         }

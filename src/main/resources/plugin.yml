@@ -4,15 +4,20 @@ main: me.xyrophyte.sxift.Sxift
 authors: [ XyroPhyte ]
 description: Minecraft Spigot Plugin
 commands:
-  ping:
-    description: Pong!
-    aliases:
-      - test
   god:
     description: Vanish. Enter GodMode.
     aliases:
       - vanish
       - invisible
+
+  heal:
+    description: Heals.
+
+  ping:
+    description: Pong!
+    aliases:
+      - test
+
   suicide:
     description: Commit suicide.
     aliases:

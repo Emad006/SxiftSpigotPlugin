@@ -7,18 +7,22 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class God implements CommandExecutor {
+public class Heal implements CommandExecutor {
 
     private final Sxift instance;
-    public God(Sxift instance) {
+    public Heal(Sxift instance) {
         this.instance = instance;
     }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (sender instanceof Player) {
-            ((Player) sender).setInvulnerable(true);
-            sender.sendMessage("Entered God Mode.");
+        if(sender instanceof Player) {
+            if(((Player) sender).getHealth() == ((Player) sender).getHealthScale()) {
+                sender.sendMessage("Health already full.");
+            } else {
+                ((Player) sender).setHealth(((Player) sender).getHealthScale());
+                sender.sendMessage("Healed!");
+            }
         } else {
             instance.getLogger().warning(ChatColor.DARK_RED + " Failed to run command. REASON: Not a PLAYER.");
         }

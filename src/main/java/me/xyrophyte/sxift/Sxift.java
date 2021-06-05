@@ -1,7 +1,9 @@
 package me.xyrophyte.sxift;
 
 import me.xyrophyte.sxift.commands.God;
+import me.xyrophyte.sxift.commands.Heal;
 import me.xyrophyte.sxift.commands.Ping;
+import me.xyrophyte.sxift.commands.Suicide;
 import me.xyrophyte.sxift.events.*;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -26,7 +28,9 @@ public final class Sxift extends JavaPlugin {
 
         // Registering commands
         getCommand("god").setExecutor(new God(this));
+        getCommand("heal").setExecutor(new Heal(this));
         getCommand("ping").setExecutor(new Ping());
+        getCommand("suicide").setExecutor(new Suicide(this));
 
         getLogger().info("Plugin started.");
     }
@@ -35,18 +39,5 @@ public final class Sxift extends JavaPlugin {
     public void onDisable() {
         // Plugin shutdown logic
         getLogger().info("Plugin is shutting down.");
-    }
-
-    @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (command.getName().equals("suicide")) {
-            if (sender instanceof Player) {
-                ((Player) sender).setHealth(0);
-                sender.sendMessage(ChatColor.BLUE + ((Player) sender).getDisplayName() + ChatColor.RED + " gave up on life.");
-            } else {
-                getLogger().warning(ChatColor.DARK_RED + " Failed to run command. " + ChatColor.YELLOW + "Reason: " + ChatColor.RED + "Not a Player.");
-            }
-        }
-        return false;
     }
 }
