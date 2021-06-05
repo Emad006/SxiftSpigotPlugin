@@ -9,17 +9,21 @@ commands:
     aliases:
       - vanish
       - invisible
+    usage: /god
 
   heal:
     description: Heals.
+    usage: /heal
 
   ping:
     description: Pong!
     aliases:
       - test
+    usage: /ping
 
   suicide:
     description: Commit suicide.
     aliases:
       - kill
       - die
+    usage: /suicide

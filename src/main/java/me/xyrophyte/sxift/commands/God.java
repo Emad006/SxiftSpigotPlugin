@@ -22,6 +22,6 @@ public class God implements CommandExecutor {
         } else {
             instance.getLogger().warning(ChatColor.DARK_RED + " Failed to run command. REASON: Not a PLAYER.");
         }
-        return false;
+        return true;
     }
 }
