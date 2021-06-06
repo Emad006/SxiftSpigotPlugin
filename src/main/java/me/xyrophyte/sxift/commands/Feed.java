@@ -19,10 +19,11 @@ public class Feed implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
             if (sender.hasPermission("sxift.feed")) {
-                if (((Player) sender).getSaturation() == 20) {
-                    sender.sendMessage("Hunger already full.");
+                if (((Player) sender).getFoodLevel() < 20) {
+                    ((Player) sender).setFoodLevel(20);
+                    sender.sendMessage("Filled hunger.");
                 } else {
-                    ((Player) sender).setSaturation(20);
+                    sender.sendMessage("Hunger already full.");
                 }
             } else {
                 sender.sendMessage(ChatColor.DARK_RED + "Failed to run command. Not enough permission.");
