@@ -19,6 +19,7 @@ public final class Sxift extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new OnJoin(), this);
         getServer().getPluginManager().registerEvents(new OnLeave(), this);
         getServer().getPluginManager().registerEvents(new OnLeaveBed(), this);
+        getServer().getPluginManager().registerEvents(new OnMove(), this);
         getServer().getPluginManager().registerEvents(new OnShear(), this);
 
         getLogger().info("Registered all events.");

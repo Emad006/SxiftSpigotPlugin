@@ -12,6 +12,7 @@ import org.bukkit.inventory.ItemStack;
 public class Kit implements CommandExecutor {
 
     private final Sxift instance;
+
     public Kit(Sxift instance) {
         this.instance = instance;
     }
@@ -27,19 +28,22 @@ public class Kit implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if(sender instanceof Player) {
-            ((Player) sender).getInventory().addItem(
-                    diamondHelmet,
-                    diamondChestplate,
-                    diamondLeggings,
-                    diamondBoots,
-                    diamondSword,
-                    diamondPickaxe,
-                    diamondAxe,
-                    diamondHoe
-            );
-            sender.sendMessage(ChatColor.GREEN + "You received " + ChatColor.AQUA +  "Diamond Kit");
-
+        if (sender instanceof Player) {
+            if (sender.hasPermission("sxift.kit")) {
+                ((Player) sender).getInventory().addItem(
+                        diamondHelmet,
+                        diamondChestplate,
+                        diamondLeggings,
+                        diamondBoots,
+                        diamondSword,
+                        diamondPickaxe,
+                        diamondAxe,
+                        diamondHoe
+                );
+                sender.sendMessage(ChatColor.GREEN + "You received " + ChatColor.BLUE + "Diamond Kit");
+            } else {
+                sender.sendMessage(ChatColor.DARK_RED + "Failed to run command. Not enough permission.");
+            }
         } else {
             instance.getLogger().warning(ChatColor.DARK_RED + " Failed to run command. REASON: Not a PLAYER.");
         }
