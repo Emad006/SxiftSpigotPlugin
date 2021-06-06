@@ -19,11 +19,11 @@ public class Heal implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
             if (sender.hasPermission("sxift.heal")) {
-                if (((Player) sender).getHealth() == ((Player) sender).getHealthScale()) {
-                    sender.sendMessage("Health already full.");
-                } else {
+                if (((Player) sender).getHealth() < ((Player) sender).getHealthScale()) {
                     ((Player) sender).setHealth(((Player) sender).getHealthScale());
                     sender.sendMessage("Healed!");
+                } else {
+                    sender.sendMessage("Health already full.");
                 }
             } else {
                 sender.sendMessage(ChatColor.DARK_RED + "Failed to run command. Not enough permission.");
