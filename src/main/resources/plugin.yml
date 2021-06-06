@@ -24,3 +24,8 @@ commands:
       - kill
       - die
     usage: /suicide
+  printMessageFromConfig:
+    description: Prints message from config.yml
+    usage: /printMessageFromConfig
+    aliases:
+      - pmfc

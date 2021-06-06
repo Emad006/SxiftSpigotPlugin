@@ -1,0 +1,14 @@
+# The name is at the end, for example, "Welcome softwinds"
+# [WelcomeMessage] [PlayerName]
+# Full stop added at the end.
+WelcomeMessage: 'Welcome to the Cum Zone'
+
+# The name is at the start, for example, "softwinds just left the game"
+# [PlayerName] [WelcomeMessage]
+# Single space added after the name.
+LeaveMessage: 'just left the server </3'
+
+# The name is at the start, for example, "softwinds committed suicide"
+# [PlayerName] [WelcomeMessage]
+# Single space added after the name.
+SuicideMessage: 'gave up on life.'
