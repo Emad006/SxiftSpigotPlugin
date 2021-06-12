@@ -13,6 +13,9 @@ commands:
   kit:
     description: Get a full diamond kit.
     usage: /kit
+  mock:
+    description: Copies whatever word you say.
+    usage: /mock
   ping:
     description: Pong!
     aliases:
@@ -24,8 +27,3 @@ commands:
       - kill
       - die
     usage: /suicide
-  printMessageFromConfig:
-    description: Prints message from config.yml
-    usage: /printMessageFromConfig
-    aliases:
-      - pmfc

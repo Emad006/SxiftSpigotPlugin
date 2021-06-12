@@ -2,8 +2,6 @@ package me.xyrophyte.sxift;
 
 import me.xyrophyte.sxift.commands.*;
 import me.xyrophyte.sxift.events.*;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Sxift extends JavaPlugin {
@@ -36,6 +34,7 @@ public final class Sxift extends JavaPlugin {
         getCommand("feed").setExecutor(new Feed(this));
         getCommand("heal").setExecutor(new Heal(this));
         getCommand("kit").setExecutor(new Kit(this));
+        getCommand("mock").setExecutor(new Mock());
         getCommand("ping").setExecutor(new Ping());
         getCommand("suicide").setExecutor(new Suicide(this));
         getLogger().info("Registered all commands.");
@@ -47,13 +46,5 @@ public final class Sxift extends JavaPlugin {
     public void onDisable() {
         // Plugin shutdown logic
         getLogger().info("Plugin is shutting down.");
-    }
-
-    @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if(command.getName().equals("printMessageFromConfig")) {
-            sender.sendMessage(getConfig().getString("Food"));
-        }
-        return true;
     }
 }
