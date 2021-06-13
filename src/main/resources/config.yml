@@ -12,3 +12,8 @@ LeaveMessage: 'just left the server </3'
 # [PlayerName] [WelcomeMessage]
 # Single space added after the name.
 SuicideMessage: 'gave up on life.'
+
+# The name is at the start, for example, "softinds took their own life."
+# [PlayerName] [KillMessage]
+# Single space added after the name.
+KillMessage: 'took their own life.'

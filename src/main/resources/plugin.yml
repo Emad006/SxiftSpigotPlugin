@@ -10,6 +10,9 @@ commands:
   heal:
     description: Heals.
     usage: /heal
+  kill:
+    description: Kill other players or commit suicide.
+    usage: /kill <player>
   kit:
     description: Get a full diamond kit.
     usage: /kit

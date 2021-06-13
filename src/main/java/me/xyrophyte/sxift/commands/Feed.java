@@ -29,7 +29,7 @@ public class Feed implements CommandExecutor {
                 sender.sendMessage(ChatColor.DARK_RED + "Failed to run command. Not enough permission.");
             }
         } else {
-            instance.getLogger().warning(ChatColor.DARK_RED + " Failed to run command. REASON: Not a PLAYER.");
+            instance.getLogger().warning(ChatColor.DARK_RED + "Failed to run command. REASON: Not a PLAYER.");
         }
         return true;
     }

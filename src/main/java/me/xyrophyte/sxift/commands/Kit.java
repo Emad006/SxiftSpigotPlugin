@@ -17,6 +17,7 @@ public class Kit implements CommandExecutor {
         this.instance = instance;
     }
 
+    /*
     private final ItemStack diamondHelmet = new ItemStack(Material.DIAMOND_HELMET);
     private final ItemStack diamondChestplate = new ItemStack(Material.DIAMOND_CHESTPLATE);
     private final ItemStack diamondLeggings = new ItemStack(Material.DIAMOND_LEGGINGS);
@@ -25,11 +26,21 @@ public class Kit implements CommandExecutor {
     private final ItemStack diamondPickaxe = new ItemStack(Material.DIAMOND_AXE);
     private final ItemStack diamondAxe = new ItemStack(Material.DIAMOND_AXE);
     private final ItemStack diamondHoe = new ItemStack(Material.DIAMOND_HOE);
+    */
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
             if (sender.hasPermission("sxift.kit")) {
+                ItemStack diamondHelmet = new ItemStack(Material.DIAMOND_HELMET);
+                ItemStack diamondChestplate = new ItemStack(Material.DIAMOND_CHESTPLATE);
+                ItemStack diamondLeggings = new ItemStack(Material.DIAMOND_LEGGINGS);
+                ItemStack diamondBoots = new ItemStack(Material.DIAMOND_BOOTS);
+                ItemStack diamondSword = new ItemStack(Material.DIAMOND_SWORD);
+                ItemStack diamondPickaxe = new ItemStack(Material.DIAMOND_AXE);
+                ItemStack diamondAxe = new ItemStack(Material.DIAMOND_AXE);
+                ItemStack diamondHoe = new ItemStack(Material.DIAMOND_HOE);
+
                 ((Player) sender).getInventory().addItem(
                         diamondHelmet,
                         diamondChestplate,
@@ -45,7 +56,7 @@ public class Kit implements CommandExecutor {
                 sender.sendMessage(ChatColor.DARK_RED + "Failed to run command. Not enough permission.");
             }
         } else {
-            instance.getLogger().warning(ChatColor.DARK_RED + " Failed to run command. REASON: Not a PLAYER.");
+            instance.getLogger().warning(ChatColor.DARK_RED + "Failed to run command. REASON: Not a PLAYER.");
         }
         return true;
     }
