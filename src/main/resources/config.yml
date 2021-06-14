@@ -1,19 +1,69 @@
+# The message that will be displayed if the player doesn't have enough permissions.
+# Message colour is "Dark Red".
+NoPermission: 'Failed to run command. Not enough permission.'
+
+# The message that will be logged to the console if it executed a player only command.
+# Message colour is "Dark Red:.
+PlayerOnly: 'Failed to run command. REASON: Not a PLAYER.'
+
+# The message that will be displayed if a player doesn't exist.
+# Message colour is "Dark Red".
+InvalidPlayer: 'Failed to run command. REASON: Player does not exist.'
+
+# The message that will be displayed if too many arguments are provided.
+# Message colour is "Dark Red".
+TooManyArgs: 'Failed to run command. REASON: Too many arguments.'
+
+# The message that will be displayed if enough arguments are not provided.
+# Message colour is "Dark Red".
+TooLittleArgs: 'Failed to run command. REASON: Not enough arguments.'
+
+# The message that is sent to the player when they join.
 # The name is at the end, for example, "Welcome softwinds"
 # [WelcomeMessage] [PlayerName]
+# WelcomeMessage is "Aqua" and PlayerName is "Green".
 # Full stop added at the end.
 WelcomeMessage: 'Welcome to the Cum Zone'
 
+# The message that is sent to the player when they leave.
 # The name is at the start, for example, "softwinds just left the game"
 # [PlayerName] [WelcomeMessage]
+# PlayerName is "Red" and LeaveMessage is "Light Purple".
 # Single space added after the name.
 LeaveMessage: 'just left the server </3'
 
+# The message that is displayed to the player when they use /suicide.
 # The name is at the start, for example, "softwinds committed suicide"
 # [PlayerName] [WelcomeMessage]
-# Single space added after the name.
+# Single space is pre added after the name in the code.
 SuicideMessage: 'gave up on life.'
 
 # The name is at the start, for example, "softinds took their own life."
 # [PlayerName] [KillMessage]
 # Single space added after the name.
-KillMessage: 'took their own life.'
+KillMessage: 'got murdered.'
+
+# The message that is sent to the player when they die.
+# Colour is "Red".
+PlayerDeathMessage: 'You died.'
+
+# The message that is sent to the player when they enter a bed.
+# Colour is "Green".
+PlayerEnterBedMessage: 'Good Night.'
+
+# The message that is sent to the player when they leave a bed.
+# Colour is "Light Purple".
+PlayerLeaveBedMessage: 'Good Morning!'
+
+# The message that is sent to the player when they don't have the permission needed to move.
+# Colour is "Dark Red".
+PlayerNoPermissionToMove: 'You do not have sufficient permission to move.'
+
+# The message that is sent to the player when they shear a sheep.
+# The player is given 10XP upon shearing a sheep.
+# Colour is "Green".
+PlayerSheepShearMessage: 'You received 10XP for Shearing the Entity.'
+
+# The message that will be displayed when a user runs /ping.
+# Colour is "Dark Purple".
+PingMessage: 'Pong!'

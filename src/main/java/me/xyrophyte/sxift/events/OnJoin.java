@@ -16,6 +16,6 @@ public class OnJoin implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
-        event.setJoinMessage(welcomeMessage + " " + ChatColor.GREEN + player.getDisplayName());
+        event.setJoinMessage(ChatColor.AQUA + welcomeMessage + " " + ChatColor.GREEN + player.getDisplayName());
     }
 }

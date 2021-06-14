@@ -16,6 +16,6 @@ public class OnLeave implements Listener {
     @EventHandler
     public void onLeave(PlayerQuitEvent event) {
         Player player = event.getPlayer();
-        event.setQuitMessage(ChatColor.RED + player.getDisplayName() + " " + leaveMessage);
+        event.setQuitMessage(ChatColor.RED + player.getDisplayName() + " " + ChatColor.LIGHT_PURPLE + leaveMessage);
     }
 }

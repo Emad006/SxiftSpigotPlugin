@@ -1,12 +1,16 @@
 package me.xyrophyte.sxift.commands;
 
-import org.bukkit.Bukkit;
+import me.xyrophyte.sxift.Sxift;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.plugin.Plugin;
 
 public class Mock implements CommandExecutor {
+
+    private final Plugin plugin = Sxift.getPlugin(Sxift.class);
+    private final String notEnoughArgs = plugin.getConfig().getString("TooLittleArgs");
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -17,7 +21,7 @@ public class Mock implements CommandExecutor {
             }
             sender.sendMessage(args[0]);
         } else {
-            sender.sendMessage(ChatColor.DARK_RED + "Not enough arguments.");
+            sender.sendMessage(ChatColor.DARK_RED + notEnoughArgs);
         }
         return true;
     }
