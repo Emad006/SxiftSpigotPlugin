@@ -30,8 +30,8 @@ public class Kill implements CommandExecutor {
             if (sender.hasPermission("sxift.kill")) {
                 if (args.length == 1) {
                     Player player = (Player) sender;
-                    Player target = Bukkit.getPlayerExact(args[0]);
-                    if (target instanceof Player) {
+                    Player target = Bukkit.getPlayer(args[0]);
+                    if (target != null) {
                         target.setHealth(0);
                         target.sendMessage(ChatColor.LIGHT_PURPLE + "You've just been murdered by " + ChatColor.RED + player.getDisplayName());
                         sender.sendMessage(ChatColor.GREEN + "Successfully killed " + ChatColor.LIGHT_PURPLE + target.getDisplayName());

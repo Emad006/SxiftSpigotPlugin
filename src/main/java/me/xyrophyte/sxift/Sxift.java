@@ -35,9 +35,11 @@ public final class Sxift extends JavaPlugin {
         getCommand("heal").setExecutor(new Heal(this));
         getCommand("kill").setExecutor(new Kill(this));
         getCommand("kit").setExecutor(new Kit(this));
+        getCommand("32k").setExecutor(new Kit32K(this));
         getCommand("mock").setExecutor(new Mock());
         getCommand("ping").setExecutor(new Ping());
         getCommand("suicide").setExecutor(new Suicide(this));
+        getCommand("trash").setExecutor(new Trash(this));
         getLogger().info("Registered all commands.");
 
         getLogger().info("Plugin started successfully.");

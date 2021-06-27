@@ -27,24 +27,27 @@ public class Kit implements CommandExecutor {
     private final ItemStack diamondLeggings = new ItemStack(Material.DIAMOND_LEGGINGS);
     private final ItemStack diamondBoots = new ItemStack(Material.DIAMOND_BOOTS);
     private final ItemStack diamondSword = new ItemStack(Material.DIAMOND_SWORD);
-    private final ItemStack diamondPickaxe = new ItemStack(Material.DIAMOND_AXE);
+    private final ItemStack diamondPickaxe = new ItemStack(Material.DIAMOND_PICKAXE);
     private final ItemStack diamondAxe = new ItemStack(Material.DIAMOND_AXE);
+    private final ItemStack diamondShovel = new ItemStack(Material.DIAMOND_SPADE);
     private final ItemStack diamondHoe = new ItemStack(Material.DIAMOND_HOE);
+    private final ItemStack[] diamondKit = {
+            diamondHelmet,
+            diamondChestplate,
+            diamondLeggings,
+            diamondBoots,
+            diamondSword,
+            diamondPickaxe,
+            diamondAxe,
+            diamondShovel,
+            diamondHoe
+    };
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
             if (sender.hasPermission("sxift.kit")) {
-                ((Player) sender).getInventory().addItem(
-                        diamondHelmet,
-                        diamondChestplate,
-                        diamondLeggings,
-                        diamondBoots,
-                        diamondSword,
-                        diamondPickaxe,
-                        diamondAxe,
-                        diamondHoe
-                );
+                ((Player) sender).getInventory().addItem(diamondKit);
                 sender.sendMessage(ChatColor.GREEN + "You received " + ChatColor.BLUE + "Diamond Kit");
             } else {
                 sender.sendMessage(ChatColor.DARK_RED + noPermission);
