@@ -32,6 +32,7 @@ public final class Sxift extends JavaPlugin {
         // Registering commands
         getLogger().info("Registering commands.");
         getCommand("feed").setExecutor(new Feed(this));
+        getCommand("fly").setExecutor(new Fly(this));
         getCommand("heal").setExecutor(new Heal(this));
         getCommand("kill").setExecutor(new Kill(this));
         getCommand("kit").setExecutor(new Kit(this));

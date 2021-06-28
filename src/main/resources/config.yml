@@ -67,3 +67,11 @@ PlayerSheepShearMessage: 'You received 10XP for Shearing the Entity.'
 # The message that will be displayed when a user runs /ping.
 # Colour is "Dark Purple".
 PingMessage: 'Pong!'
+
+# The message that is sent to the player upon enabling flight.
+# Message colour is "Aqua".
+FlyEnable: 'Flight enabled.'
+
+# The message that is sent to the player upon disabling flight
+# Message colour is "Red".
+FlyDisable: 'Flight disabled.'

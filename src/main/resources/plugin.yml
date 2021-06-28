@@ -7,6 +7,9 @@ commands:
   feed:
     description: Refills hunger.
     usage: /feed
+  fly:
+    description: Fly.
+    usage: /fly
   heal:
     description: Heals.
     usage: /heal
