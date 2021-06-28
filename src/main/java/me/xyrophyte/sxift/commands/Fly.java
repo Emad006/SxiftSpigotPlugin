@@ -28,12 +28,12 @@ public class Fly implements CommandExecutor {
         if (sender instanceof Player) {
             if (sender.hasPermission("sxift.fly")) {
                 Player player = (Player) sender;
-                if(!player.getAllowFlight()) {
-                    player.setFlying(true);
-                    player.sendMessage(ChatColor.AQUA + flyEnable);
-                } else {
+                if(player.getAllowFlight()) {
                     player.setFlying(false);
-                    player.sendMessage(ChatColor.RED + flyDisable);
+                    player.sendMessage(ChatColor.AQUA + flyDisable);
+                } else {
+                    player.setFlying(true);
+                    player.sendMessage(ChatColor.RED + flyEnable);
                 }
             } else {
                 sender.sendMessage(ChatColor.DARK_RED + noPermission);
