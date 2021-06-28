@@ -23,19 +23,15 @@ public class Fly implements CommandExecutor {
     private final String flyEnable = plugin.getConfig().getString("FlyEnable");
     private final String flyDisable = plugin.getConfig().getString("FlyDisable");
 
-    private final ArrayList<Player> flyingPlayers = new ArrayList<>();
-
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
             if (sender.hasPermission("sxift.fly")) {
                 Player player = (Player) sender;
-                if(!flyingPlayers.contains(player)) {
-                    flyingPlayers.add(player);
+                if(!player.getAllowFlight()) {
                     player.setFlying(true);
                     player.sendMessage(ChatColor.AQUA + flyEnable);
                 } else {
-                    flyingPlayers.remove(player);
                     player.setFlying(false);
                     player.sendMessage(ChatColor.RED + flyDisable);
                 }
