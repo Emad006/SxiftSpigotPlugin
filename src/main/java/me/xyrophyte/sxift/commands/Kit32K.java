@@ -54,9 +54,7 @@ public class Kit32K implements CommandExecutor {
             shovel,
             hoe,
             bow,
-            arrow,
-            stickOfDoom,
-            knockbackStick
+            arrow
     };
 
     @Override
@@ -505,7 +503,7 @@ public class Kit32K implements CommandExecutor {
 
 
                 Player player = (Player) sender;
-                Inventory kit32K = Bukkit.createInventory(player, 11, "32K Kit");
+                Inventory kit32K = Bukkit.createInventory(player, 9, "32K Kit");
                 player.openInventory(kit32K);
                 kit32K.setContents(kit);
             } else {
