@@ -31,3 +31,4 @@ Suicide | sxift.suicide
 Kill | sxift.kill
 32k | sxift.32k
 Trash | sxift.trash
+Fly | sxift.fly
