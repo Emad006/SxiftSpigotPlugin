@@ -1,6 +1,7 @@
 package me.xyrophyte.sxift.commands;
 
 import me.xyrophyte.sxift.Sxift;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -8,6 +9,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.Plugin;
@@ -29,12 +31,6 @@ public class Kit32K implements CommandExecutor {
     private final ItemStack chestplate = new ItemStack(Material.LEATHER_CHESTPLATE);
     private final ItemStack leggings = new ItemStack(Material.LEATHER_LEGGINGS);
     private final ItemStack boots = new ItemStack(Material.LEATHER_BOOTS);
-    private final ItemStack[] armor = {
-      helmet,
-      chestplate,
-      leggings,
-      boots
-    };
 
     private final ItemStack sword = new ItemStack(Material.IRON_SWORD);
     private final ItemStack axe = new ItemStack(Material.IRON_AXE);
@@ -43,17 +39,22 @@ public class Kit32K implements CommandExecutor {
     private final ItemStack hoe = new ItemStack(Material.IRON_HOE);
     private final ItemStack bow = new ItemStack(Material.BOW);
     private final ItemStack arrow = new ItemStack(Material.ARROW, 64);
-    private final ItemStack[] tools = {
+
+    private final ItemStack stickOfDoom = new ItemStack(Material.STICK);
+    private final ItemStack knockbackStick = new ItemStack(Material.STICK);
+
+    private final ItemStack[] kit = {
+            helmet,
+            chestplate,
+            leggings,
+            boots,
             sword,
             axe,
             pickaxe,
             shovel,
-            hoe
-    };
-
-    private final ItemStack stickOfDoom = new ItemStack(Material.STICK);
-    private final ItemStack knockbackStick = new ItemStack(Material.STICK);
-    private final ItemStack[] sticks = {
+            hoe,
+            bow,
+            arrow,
             stickOfDoom,
             knockbackStick
     };
@@ -75,8 +76,8 @@ public class Kit32K implements CommandExecutor {
                 helmet.addUnsafeEnchantment(Enchantment.FIRE_ASPECT, 32767);
                 helmet.addUnsafeEnchantment(Enchantment.FROST_WALKER, 32767);
                 helmet.addUnsafeEnchantment(Enchantment.KNOCKBACK, 32767);
-                helmet.addUnsafeEnchantment(Enchantment.LOOT_BONUS_BLOCKS, 32767);
-                helmet.addUnsafeEnchantment(Enchantment.LOOT_BONUS_MOBS, 32767);
+                helmet.addUnsafeEnchantment(Enchantment.LOOT_BONUS_BLOCKS, 100);
+                helmet.addUnsafeEnchantment(Enchantment.LOOT_BONUS_MOBS, 100);
                 helmet.addUnsafeEnchantment(Enchantment.LUCK, 32767);
                 helmet.addUnsafeEnchantment(Enchantment.LURE, 32767);
                 helmet.addUnsafeEnchantment(Enchantment.MENDING, 32767);
@@ -111,8 +112,8 @@ public class Kit32K implements CommandExecutor {
                 chestplate.addUnsafeEnchantment(Enchantment.FIRE_ASPECT, 32767);
                 chestplate.addUnsafeEnchantment(Enchantment.FROST_WALKER, 32767);
                 chestplate.addUnsafeEnchantment(Enchantment.KNOCKBACK, 32767);
-                chestplate.addUnsafeEnchantment(Enchantment.LOOT_BONUS_BLOCKS, 32767);
-                chestplate.addUnsafeEnchantment(Enchantment.LOOT_BONUS_MOBS, 32767);
+                chestplate.addUnsafeEnchantment(Enchantment.LOOT_BONUS_BLOCKS, 100);
+                chestplate.addUnsafeEnchantment(Enchantment.LOOT_BONUS_MOBS, 100);
                 chestplate.addUnsafeEnchantment(Enchantment.LUCK, 32767);
                 chestplate.addUnsafeEnchantment(Enchantment.LURE, 32767);
                 chestplate.addUnsafeEnchantment(Enchantment.MENDING, 32767);
@@ -147,8 +148,8 @@ public class Kit32K implements CommandExecutor {
                 leggings.addUnsafeEnchantment(Enchantment.FIRE_ASPECT, 32767);
                 leggings.addUnsafeEnchantment(Enchantment.FROST_WALKER, 32767);
                 leggings.addUnsafeEnchantment(Enchantment.KNOCKBACK, 32767);
-                leggings.addUnsafeEnchantment(Enchantment.LOOT_BONUS_BLOCKS, 32767);
-                leggings.addUnsafeEnchantment(Enchantment.LOOT_BONUS_MOBS, 32767);
+                leggings.addUnsafeEnchantment(Enchantment.LOOT_BONUS_BLOCKS, 100);
+                leggings.addUnsafeEnchantment(Enchantment.LOOT_BONUS_MOBS, 100);
                 leggings.addUnsafeEnchantment(Enchantment.LUCK, 32767);
                 leggings.addUnsafeEnchantment(Enchantment.LURE, 32767);
                 leggings.addUnsafeEnchantment(Enchantment.MENDING, 32767);
@@ -183,8 +184,8 @@ public class Kit32K implements CommandExecutor {
                 boots.addUnsafeEnchantment(Enchantment.FIRE_ASPECT, 32767);
                 boots.addUnsafeEnchantment(Enchantment.FROST_WALKER, 32767);
                 boots.addUnsafeEnchantment(Enchantment.KNOCKBACK, 32767);
-                boots.addUnsafeEnchantment(Enchantment.LOOT_BONUS_BLOCKS, 32767);
-                boots.addUnsafeEnchantment(Enchantment.LOOT_BONUS_MOBS, 32767);
+                boots.addUnsafeEnchantment(Enchantment.LOOT_BONUS_BLOCKS, 100);
+                boots.addUnsafeEnchantment(Enchantment.LOOT_BONUS_MOBS, 100);
                 boots.addUnsafeEnchantment(Enchantment.LUCK, 32767);
                 boots.addUnsafeEnchantment(Enchantment.LURE, 32767);
                 boots.addUnsafeEnchantment(Enchantment.MENDING, 32767);
@@ -219,8 +220,8 @@ public class Kit32K implements CommandExecutor {
                 sword.addUnsafeEnchantment(Enchantment.FIRE_ASPECT, 32767);
                 sword.addUnsafeEnchantment(Enchantment.FROST_WALKER, 32767);
                 sword.addUnsafeEnchantment(Enchantment.KNOCKBACK, 32767);
-                sword.addUnsafeEnchantment(Enchantment.LOOT_BONUS_BLOCKS, 32767);
-                sword.addUnsafeEnchantment(Enchantment.LOOT_BONUS_MOBS, 32767);
+                sword.addUnsafeEnchantment(Enchantment.LOOT_BONUS_BLOCKS, 100);
+                sword.addUnsafeEnchantment(Enchantment.LOOT_BONUS_MOBS, 100);
                 sword.addUnsafeEnchantment(Enchantment.LUCK, 32767);
                 sword.addUnsafeEnchantment(Enchantment.LURE, 32767);
                 sword.addUnsafeEnchantment(Enchantment.MENDING, 32767);
@@ -255,8 +256,8 @@ public class Kit32K implements CommandExecutor {
                 axe.addUnsafeEnchantment(Enchantment.FIRE_ASPECT, 32767);
                 axe.addUnsafeEnchantment(Enchantment.FROST_WALKER, 32767);
                 axe.addUnsafeEnchantment(Enchantment.KNOCKBACK, 32767);
-                axe.addUnsafeEnchantment(Enchantment.LOOT_BONUS_BLOCKS, 32767);
-                axe.addUnsafeEnchantment(Enchantment.LOOT_BONUS_MOBS, 32767);
+                axe.addUnsafeEnchantment(Enchantment.LOOT_BONUS_BLOCKS, 100);
+                axe.addUnsafeEnchantment(Enchantment.LOOT_BONUS_MOBS, 100);
                 axe.addUnsafeEnchantment(Enchantment.LUCK, 32767);
                 axe.addUnsafeEnchantment(Enchantment.LURE, 32767);
                 axe.addUnsafeEnchantment(Enchantment.MENDING, 32767);
@@ -291,8 +292,8 @@ public class Kit32K implements CommandExecutor {
                 pickaxe.addUnsafeEnchantment(Enchantment.FIRE_ASPECT, 32767);
                 pickaxe.addUnsafeEnchantment(Enchantment.FROST_WALKER, 32767);
                 pickaxe.addUnsafeEnchantment(Enchantment.KNOCKBACK, 32767);
-                pickaxe.addUnsafeEnchantment(Enchantment.LOOT_BONUS_BLOCKS, 32767);
-                pickaxe.addUnsafeEnchantment(Enchantment.LOOT_BONUS_MOBS, 32767);
+                pickaxe.addUnsafeEnchantment(Enchantment.LOOT_BONUS_BLOCKS, 100);
+                pickaxe.addUnsafeEnchantment(Enchantment.LOOT_BONUS_MOBS, 100);
                 pickaxe.addUnsafeEnchantment(Enchantment.LUCK, 32767);
                 pickaxe.addUnsafeEnchantment(Enchantment.LURE, 32767);
                 pickaxe.addUnsafeEnchantment(Enchantment.MENDING, 32767);
@@ -327,8 +328,8 @@ public class Kit32K implements CommandExecutor {
                 shovel.addUnsafeEnchantment(Enchantment.FIRE_ASPECT, 32767);
                 shovel.addUnsafeEnchantment(Enchantment.FROST_WALKER, 32767);
                 shovel.addUnsafeEnchantment(Enchantment.KNOCKBACK, 32767);
-                shovel.addUnsafeEnchantment(Enchantment.LOOT_BONUS_BLOCKS, 32767);
-                shovel.addUnsafeEnchantment(Enchantment.LOOT_BONUS_MOBS, 32767);
+                shovel.addUnsafeEnchantment(Enchantment.LOOT_BONUS_BLOCKS, 100);
+                shovel.addUnsafeEnchantment(Enchantment.LOOT_BONUS_MOBS, 100);
                 shovel.addUnsafeEnchantment(Enchantment.LUCK, 32767);
                 shovel.addUnsafeEnchantment(Enchantment.LURE, 32767);
                 shovel.addUnsafeEnchantment(Enchantment.MENDING, 32767);
@@ -363,8 +364,8 @@ public class Kit32K implements CommandExecutor {
                 hoe.addUnsafeEnchantment(Enchantment.FIRE_ASPECT, 32767);
                 hoe.addUnsafeEnchantment(Enchantment.FROST_WALKER, 32767);
                 hoe.addUnsafeEnchantment(Enchantment.KNOCKBACK, 32767);
-                hoe.addUnsafeEnchantment(Enchantment.LOOT_BONUS_BLOCKS, 32767);
-                hoe.addUnsafeEnchantment(Enchantment.LOOT_BONUS_MOBS, 32767);
+                hoe.addUnsafeEnchantment(Enchantment.LOOT_BONUS_BLOCKS, 100);
+                hoe.addUnsafeEnchantment(Enchantment.LOOT_BONUS_MOBS, 100);
                 hoe.addUnsafeEnchantment(Enchantment.LUCK, 32767);
                 hoe.addUnsafeEnchantment(Enchantment.LURE, 32767);
                 hoe.addUnsafeEnchantment(Enchantment.MENDING, 32767);
@@ -399,8 +400,8 @@ public class Kit32K implements CommandExecutor {
                 bow.addUnsafeEnchantment(Enchantment.FIRE_ASPECT, 32767);
                 bow.addUnsafeEnchantment(Enchantment.FROST_WALKER, 32767);
                 bow.addUnsafeEnchantment(Enchantment.KNOCKBACK, 32767);
-                bow.addUnsafeEnchantment(Enchantment.LOOT_BONUS_BLOCKS, 32767);
-                bow.addUnsafeEnchantment(Enchantment.LOOT_BONUS_MOBS, 32767);
+                bow.addUnsafeEnchantment(Enchantment.LOOT_BONUS_BLOCKS, 100);
+                bow.addUnsafeEnchantment(Enchantment.LOOT_BONUS_MOBS, 100);
                 bow.addUnsafeEnchantment(Enchantment.LUCK, 32767);
                 bow.addUnsafeEnchantment(Enchantment.LURE, 32767);
                 bow.addUnsafeEnchantment(Enchantment.MENDING, 32767);
@@ -435,8 +436,8 @@ public class Kit32K implements CommandExecutor {
                 arrow.addUnsafeEnchantment(Enchantment.FIRE_ASPECT, 32767);
                 arrow.addUnsafeEnchantment(Enchantment.FROST_WALKER, 32767);
                 arrow.addUnsafeEnchantment(Enchantment.KNOCKBACK, 32767);
-                arrow.addUnsafeEnchantment(Enchantment.LOOT_BONUS_BLOCKS, 32767);
-                arrow.addUnsafeEnchantment(Enchantment.LOOT_BONUS_MOBS, 32767);
+                arrow.addUnsafeEnchantment(Enchantment.LOOT_BONUS_BLOCKS, 100);
+                arrow.addUnsafeEnchantment(Enchantment.LOOT_BONUS_MOBS, 100);
                 arrow.addUnsafeEnchantment(Enchantment.LUCK, 32767);
                 arrow.addUnsafeEnchantment(Enchantment.LURE, 32767);
                 arrow.addUnsafeEnchantment(Enchantment.MENDING, 32767);
@@ -471,8 +472,8 @@ public class Kit32K implements CommandExecutor {
                 stickOfDoom.addUnsafeEnchantment(Enchantment.FIRE_ASPECT, 32767);
                 stickOfDoom.addUnsafeEnchantment(Enchantment.FROST_WALKER, 32767);
                 stickOfDoom.addUnsafeEnchantment(Enchantment.KNOCKBACK, 32767);
-                stickOfDoom.addUnsafeEnchantment(Enchantment.LOOT_BONUS_BLOCKS, 32767);
-                stickOfDoom.addUnsafeEnchantment(Enchantment.LOOT_BONUS_MOBS, 32767);
+                stickOfDoom.addUnsafeEnchantment(Enchantment.LOOT_BONUS_BLOCKS, 100);
+                stickOfDoom.addUnsafeEnchantment(Enchantment.LOOT_BONUS_MOBS, 100);
                 stickOfDoom.addUnsafeEnchantment(Enchantment.LUCK, 32767);
                 stickOfDoom.addUnsafeEnchantment(Enchantment.LURE, 32767);
                 stickOfDoom.addUnsafeEnchantment(Enchantment.MENDING, 32767);
@@ -503,10 +504,10 @@ public class Kit32K implements CommandExecutor {
                 knockbackStickMeta.setLore(knockbackStickLore);
 
 
-                ((Player) sender).getInventory().addItem(armor);
-                ((Player) sender).getInventory().addItem(tools);
-                ((Player) sender).getInventory().addItem(sticks);
-                sender.sendMessage(ChatColor.GREEN + "You received " + ChatColor.BLUE + "32K Kit.");
+                Player player = (Player) sender;
+                Inventory kit32K = Bukkit.createInventory(player, 11, "32K Kit");
+                player.openInventory(kit32K);
+                kit32K.setContents(kit);
             } else {
                 sender.sendMessage(ChatColor.DARK_RED + noPermission);
             }
