@@ -8,9 +8,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
-import java.util.ArrayList;
-
-
 public class Fly implements CommandExecutor {
     private final Sxift instance;
 
@@ -24,23 +21,18 @@ public class Fly implements CommandExecutor {
     private final String flyEnable = plugin.getConfig().getString("FlyEnable");
     private final String flyDisable = plugin.getConfig().getString("FlyDisable");
 
-    private final ArrayList<Player> flyingPlayers = new ArrayList<>();
-
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
             if (sender.hasPermission("sxift.fly")) {
                 Player player = (Player) sender;
-                if(!flyingPlayers.contains(player)) {
-                    flyingPlayers.add(player);
-                    player.setFlying(true);
+                if (!player.getAllowFlight()) {
+                    player.setAllowFlight(true);
                     player.sendMessage(ChatColor.AQUA + flyEnable);
                 } else {
-                    flyingPlayers.remove(player);
-                    player.setFlying(false);
+                    player.setAllowFlight(false);
                     player.sendMessage(ChatColor.RED + flyDisable);
                 }
-
             } else {
                 sender.sendMessage(ChatColor.DARK_RED + noPermission);
             }
